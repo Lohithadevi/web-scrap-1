@@ -1,7 +1,7 @@
 const axios = require('axios');
 const fs = require('fs-extra');
 
-// --- CONFIGURATION ---
+// --- BATCH CONFIGURATION ---
 const BATCH_SIZE = 10;      
 const WAIT_TIME = 3000;    
 
@@ -104,7 +104,7 @@ async function runScraper() {
 
             results.push(...batchResults);
             
-            // Write only once after each batch to avoid corruption
+            // WRITE ONLY ONCE AFTER EACH BATCH TO AVOID CORRUPTION.
             await fs.writeJson('final_leaderboard.json', results, { spaces: 2 });
 
             if (i + BATCH_SIZE < students.length) {

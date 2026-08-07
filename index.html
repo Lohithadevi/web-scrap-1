@@ -33,10 +33,10 @@
                 // Sort by total score
                 data.sort((a, b) => b.counts.total - a.counts.total); 
                 
-                body.innerHTML = ''; // Clear existing content
+                body.innerHTML = ''; // CLEAR EXISITING CONTENT
 
                 data.forEach(student => {
-                    // Mapping the data into the row
+                    // MAPPING  THE DATA INTO THE ROW.
                     const row = `
                         <tr class="border-b hover:bg-gray-50 text-gray-700">
                             <td class="p-4 font-medium text-gray-900">${student.name}</td>
